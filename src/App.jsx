@@ -1,15 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [pstatus, setPatus] = useState(false)
+  const [pstatus, setPatus] = useState(false);
+
   return (
-   <div>
-   <input type={pstatus? 'text' : 'password'} /> <button onClick={()=>setPatus(!pstatus)} >{pstatus? 'hide' : 'show '}</button>
-   </div>
-  )
+    <div className="app-container">
+      <div className="password-wrapper">
+        <input 
+          type={pstatus ? 'text' : 'password'} 
+          className="password-input" 
+          placeholder="Enter your password" 
+        />
+        <button 
+          onClick={() => setPatus(!pstatus)} 
+          className="toggle-button"
+        >
+          {pstatus ? 'Hide' : 'Show'}
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
